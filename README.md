@@ -1,6 +1,8 @@
 # Guia de compilación de Qemu Rocky Linux 9 Workstation
 Guia para compilar Qemu en un clonico binario RHEL 9.
 
+Esta compilación es para emulación de máquinas x86_64, con interfaz GTK.
+
 ## 1. Instalar las dependencias
 
 ```$ sudo dnf install python3 python3-pip pkgconf-pkg-config glib2-devel libmount-devel pixman-devel lzo-devel gtk3-devel```
@@ -23,7 +25,7 @@ Guia para compilar Qemu en un clonico binario RHEL 9.
 
 ```$ ./configure --help```
 
-```$ ./configure --prefix=/opt/qemu --target-list=x86_64-softmmu --enable-gtk```
+```$ ./configure --target-list=x86_64-softmmu --enable-gtk```
 
 ## Entrar en modo superusuario e instalar ninja
 
