@@ -3,15 +3,17 @@ Guia para compilar Qemu en un clonico binario RHEL 9.
 
 Esta compilación es para emulación de máquinas x86_64, con interfaz GTK.
 
-## 1. Instalar las dependencias
+## 1. Instalar Herramientas de desarrollo y dependencias
 
-```$ sudo dnf install python3 python3-pip pkgconf-pkg-config glib2-devel libmount-devel pixman-devel lzo-devel gtk3-devel```
+```# su```
 
-## 2. Crear un directorio para alojar el codigo a compilar
+```# dnf groupinstall "Herramientas de desarrollo"```
 
-```$ mkdir sources```
+```# dnf install python3 python3-pip pkgconf-pkg-config glib2-devel libmount-devel pixman-devel lzo-devel gtk3-devel```
 
-```$ cd sources```
+## 2. Ir al directorio para alojar el codigo
+
+```$ cd /usr/local/src```
 
 ## 3. Descargar y descomprimir archivo *.tar.xz
 
@@ -23,15 +25,11 @@ Esta compilación es para emulación de máquinas x86_64, con interfaz GTK.
 
 ## Configurar parámetros necesarios
 
+```# pip3 install ninja```
+
 ```$ ./configure --help```
 
-```$ ./configure --target-list=x86_64-softmmu --enable-gtk```
-
-## Entrar en modo superusuario e instalar ninja
-
-```$ su```
-
-```# pip3 install ninja```
+```$ ./configure --target-list=x86_64-softmmu,i386-softmmu --enable-gtk```
 
 ## Verificar núcleos disponibles para compilar y compilación con Make
 
