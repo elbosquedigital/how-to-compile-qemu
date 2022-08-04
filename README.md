@@ -35,6 +35,6 @@ Esta compilación es para emulación de máquinas x86_64, con interfaz GTK.
 
 ```# nproc```
 
-```# make -j 4```
+```# make -j <nproc>```
 
 ```# make install```
