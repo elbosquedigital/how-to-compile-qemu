@@ -1,7 +1,7 @@
 # Guia de compilación de Qemu Rocky Linux 9 Workstation
 Guia para compilar Qemu en un clonico binario RHEL 9.
 
-Esta compilación es para emulación de máquinas x86_64, con interfaz GTK.
+Esta compilación es para emulación de máquinas i386 y x86_64, con interfaz GTK.
 
 ## 1. Instalar Herramientas de desarrollo y dependencias
 
@@ -13,23 +13,23 @@ Esta compilación es para emulación de máquinas x86_64, con interfaz GTK.
 
 ## 2. Ir al directorio para alojar el codigo
 
-```$ cd /usr/local/src```
+```# cd /usr/local/src```
 
 ## 3. Descargar y descomprimir archivo *.tar.xz
 
-```$ wget https://download.qemu.org/qemu-7.0.0.tar.xz```
+```# wget https://download.qemu.org/qemu-7.0.0.tar.xz```
 
-```$ tar Jxvf qemu-7.0.0.tar.xz```
+```# tar Jxvf qemu-7.0.0.tar.xz```
 
-```$ cd qemu-7.0.0```
+```# cd qemu-7.0.0```
 
 ## Configurar parámetros necesarios
 
 ```# pip3 install ninja```
 
-```$ ./configure --help```
+```# ./configure --help```
 
-```$ ./configure --target-list=x86_64-softmmu,i386-softmmu --enable-gtk```
+```# ./configure --target-list=x86_64-softmmu,i386-softmmu --enable-gtk```
 
 ## Verificar núcleos disponibles para compilar y compilación con Make
 
